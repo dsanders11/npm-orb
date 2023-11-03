@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  npm: continuousauth/npm@dev:<<pipeline.git.revision>>
+  npm: dsanders11/continuousauth-npm@dev:<<pipeline.git.revision>>
   orb-tools: circleci/orb-tools@11.5
 
 filters: &filters
@@ -22,7 +22,7 @@ workflows:
       - orb-tools/pack:
           filters: *filters
       - orb-tools/publish:
-          orb-name: continuousauth/npm
+          orb-name: dsanders11/continuousauth-npm
           vcs-type: << pipeline.project.type >>
           pub-type: production
           requires:
