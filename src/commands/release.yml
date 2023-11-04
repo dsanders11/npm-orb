@@ -12,7 +12,7 @@ steps:
         curl https://raw.githubusercontent.com/dsanders11/npm-orb/$SHA/package-lock.json > $DIR/package-lock.json
         cd $DIR
         npm ci
-        echo 'export PATH="$DIR"/node_modules/.bin:"$PATH"' >> "$BASH_ENV"
+        echo "export PATH=$DIR/node_modules/.bin:$PATH" >> "$BASH_ENV"
   - run:
       name: Obtain publishing credentials
       command: circleci-oidc-github-auth
